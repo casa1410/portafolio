@@ -20,7 +20,12 @@ const es: TranslationShape = {
       fullName: 'Sebastian Alfredo Casadiego Mazzillo',
       role: 'Ingeniero de Sistemas',
       university: 'Universidad de la Costa CUC',
-      bio: 'Ingeniero de sistemas apasionado por construir experiencias digitales que combinan precisión técnica con pensamiento creativo. Siempre en busca del próximo desafío para robar corazones — y resolver problemas.',
+      bio: 'Ingeniero de sistemas apasionado por construir experiencias digitales que combinan precisión técnica con pensamiento creativo. Siempre en busca del próximo desafío para aprender algo nuevo y resolver problemas.',
+      level: {
+        prefix: 'NIVEL',
+        daysToNext: 'días para el siguiente nivel',
+        birthdayNote: 'Sube de nivel cada 27 de abril — la barra llena un día de XP a la vez.',
+      },
     },
     experience: {
       title: 'Experiencia',

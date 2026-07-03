@@ -19,6 +19,11 @@ export interface TranslationShape {
       role: string;
       university: string;
       bio: string;
+      level: {
+        prefix: string;
+        daysToNext: string;
+        birthdayNote: string;
+      };
     };
     experience: {
       title: string;
@@ -84,7 +89,12 @@ const en: TranslationShape = {
       fullName: 'Sebastian Alfredo Casadiego Mazzillo',
       role: 'Systems Engineer',
       university: 'Universidad de la Costa CUC',
-      bio: 'Systems engineer passionate about building digital experiences that blend technical precision with creative thinking. Always looking for the next challenge to steal hearts — and solve problems.',
+      bio: 'Systems engineer passionate about building digital experiences that blend technical precision with creative thinking. Always looking for the next challenge to learn something new and solve problems.',
+      level: {
+        prefix: 'LEVEL',
+        daysToNext: 'days to next level',
+        birthdayNote: 'Levels up every April 27th — the bar fills one day of XP at a time.',
+      },
     },
     experience: {
       title: 'Experience',

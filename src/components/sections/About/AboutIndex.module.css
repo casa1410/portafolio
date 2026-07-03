@@ -4,6 +4,63 @@
   gap: 40px;
 }
 
+/* ── Level / XP bar ─────────────────────────────────────── */
+.levelBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 460px;
+}
+
+.levelHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.levelBadge {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  background: var(--paper);
+  color: var(--ink);
+  padding: 5px 12px;
+}
+
+.levelMeta {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: var(--paper-dim);
+}
+
+.barTrack {
+  width: 100%;
+  height: 22px;
+  border: 2px solid var(--paper);
+  padding: 2px;
+  box-sizing: border-box;
+}
+
+.barFill {
+  height: 100%;
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--paper) 0px,
+    var(--paper) 6px,
+    var(--ink) 6px,
+    var(--ink) 8px
+  );
+}
+
+.birthdayNote {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--paper-faint);
+  font-style: italic;
+}
+
 /* ── Top row ─────────────────────────────────────────────── */
 .topRow {
   display: flex;

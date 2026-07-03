@@ -1,10 +1,12 @@
 import { useLanguage } from '../../../context/LanguageContext';
 import profilePhoto from '../../../assets/profile.jpg';
+import { getLevelProgress } from '../../../utils/level';
 import styles from './AboutIndex.module.css';
 
 export const AboutIndex = () => {
   const { t } = useLanguage();
   const info = t.about.index;
+  const { level, daysRemaining, percent } = getLevelProgress();
 
   return (
     <div className={styles.container}>
@@ -35,6 +37,18 @@ export const AboutIndex = () => {
           <div className={styles.divider} />
           <p className={styles.university}>{info.university}</p>
         </div>
+      </div>
+
+      {/* Level / XP bar */}
+      <div className={styles.levelBlock}>
+        <div className={styles.levelHeader}>
+          <span className={styles.levelBadge}>{info.level.prefix} {level}</span>
+          <span className={styles.levelMeta}>{daysRemaining} {info.level.daysToNext}</span>
+        </div>
+        <div className={styles.barTrack}>
+          <div className={styles.barFill} style={{ width: `${percent}%` }} />
+        </div>
+        <span className={styles.birthdayNote}>{info.level.birthdayNote}</span>
       </div>
 
       {/* Bio */}
