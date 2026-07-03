@@ -2,53 +2,50 @@
   position: relative;
   width: var(--sidebar-width);
   min-width: var(--sidebar-width);
-  height: 100vh;
-  background: transparent;
+  height: 100%;
+  background: var(--ink);
   display: flex;
   flex-direction: column;
-  z-index: 3;
 }
 
-/* ── Header — small, not the focus ──────────────────────────── */
+/* ── Header ──────────────────────────────────────────────────── */
 .header {
-  padding: 18px 22px 10px;
+  padding: 20px 22px 14px;
   flex-shrink: 0;
 }
 
 .headerTag {
   display: block;
   font-family: var(--font-display);
-  font-size: 0.52rem;
-  letter-spacing: 5px;
-  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.5rem;
+  letter-spacing: 3px;
+  color: var(--paper-dim);
   text-transform: uppercase;
-  margin-bottom: 2px;
+  margin-bottom: 8px;
 }
 
 .headerInitials {
   display: block;
   font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 900;
-  color: var(--p5-white);
-  letter-spacing: 6px;
-  line-height: 1;
-  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
+  font-size: 1.4rem;
+  color: var(--paper);
+  letter-spacing: 3px;
+  line-height: 1.4;
 }
 
 .headerLine {
-  margin-top: 10px;
-  height: 1px;
+  margin-top: 12px;
+  height: 2px;
   width: 65%;
-  background: rgba(255, 255, 255, 0.25);
+  background: var(--paper-faint);
 }
 
-/* ── Navigation — BIG like P5 ───────────────────────────────── */
+/* ── Navigation ─────────────────────────────────────────────── */
 .nav {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;   /* vertically center the nav items */
+  justify-content: center;
   padding: 4px 0;
   overflow-y: auto;
 }
@@ -58,59 +55,38 @@
   align-items: center;
   gap: 12px;
   width: 100%;
-  padding: 10px 22px;
+  padding: 12px 22px;
   font-family: var(--font-display);
-  font-size: 2rem;          /* BIG — like P5's menu */
-  font-weight: 900;
+  font-size: 0.85rem;
   letter-spacing: 1px;
-  color: rgba(255, 255, 255, 0.88);
+  color: var(--paper);
   text-align: left;
-  text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.4);
-  transition: background var(--transition), color var(--transition), transform var(--transition);
-  line-height: 1.1;
+  line-height: 1.4;
+  transition: background var(--transition), color var(--transition);
 }
 
 .navItem:hover:not(.navItemActive) {
-  background: rgba(0, 0, 0, 0.2);
-  color: var(--p5-white);
-  transform: translateX(4px);
+  color: var(--paper-dim);
 }
 
-/* Active: black bg with arrow shape */
+/* Active: classic inverted menu cursor — white block, black text */
 .navItemActive {
-  background: var(--p5-black);
-  color: var(--p5-white);
-  text-shadow: none;
-  clip-path: polygon(
-    0 0,
-    calc(100% - 22px) 0,
-    100% 50%,
-    calc(100% - 22px) 100%,
-    0 100%
-  );
-  padding-right: 44px;
-  transform: none;
-}
-
-.navItemActive .bullet {
-  color: var(--p5-red);
+  background: var(--paper);
+  color: var(--ink);
 }
 
 .bullet {
   font-size: 0.7rem;
-  color: rgba(255, 255, 255, 0.45);
+  width: 0.8em;
   flex-shrink: 0;
-  transition: color var(--transition);
-  margin-top: 2px;
 }
 
 /* ── Sub-navigation ─────────────────────────────────────────── */
 .subNav {
   display: flex;
   flex-direction: column;
-  background: rgba(0, 0, 0, 0.28);
-  border-left: 3px solid rgba(255, 255, 255, 0.2);
-  margin: 0 0 4px 22px;
+  border-left: 2px solid var(--paper-faint);
+  margin: 0 0 6px 22px;
   animation: subNavExpand 0.2s ease;
 }
 
@@ -119,41 +95,38 @@
   align-items: center;
   gap: 8px;
   padding: 8px 14px;
-  font-family: var(--font-display);
-  font-size: 1rem;
-  font-weight: 500;
-  letter-spacing: 2px;
-  color: rgba(255, 255, 255, 0.48);
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  letter-spacing: 1px;
+  color: var(--paper-dim);
   text-align: left;
-  transition: color var(--transition), background var(--transition);
+  transition: color var(--transition);
 }
 
 .subNavItem:hover {
-  color: var(--p5-white);
-  background: rgba(0, 0, 0, 0.15);
+  color: var(--paper);
 }
 
 .subNavItemActive {
-  color: var(--p5-white);
-  font-weight: 700;
+  color: var(--paper);
 }
 
 .subArrow {
-  font-size: 0.75rem;
-  opacity: 0.5;
+  font-size: 0.85rem;
+  opacity: 0.7;
 }
 
 /* ── Footer ─────────────────────────────────────────────────── */
 .footer {
   padding: 12px 22px;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-top: 2px solid var(--paper-faint);
   flex-shrink: 0;
 }
 
 .footerText {
   font-family: var(--font-display);
-  font-size: 0.52rem;
-  letter-spacing: 3px;
-  color: rgba(255, 255, 255, 0.22);
+  font-size: 0.5rem;
+  letter-spacing: 2px;
+  color: var(--paper-faint);
   text-transform: uppercase;
 }

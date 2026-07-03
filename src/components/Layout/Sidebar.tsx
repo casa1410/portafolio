@@ -1,6 +1,5 @@
 import { MainSection, AboutTab } from '../../types';
 import { useLanguage } from '../../context/LanguageContext';
-import { P5Text } from '../UI/P5Text';
 import styles from './Sidebar.module.css';
 
 interface SidebarProps {
@@ -42,8 +41,8 @@ export const Sidebar = ({
           className={`${styles.navItem} ${activeSection === 'about' ? styles.navItemActive : ''}`}
           onClick={() => onSectionChange('about')}
         >
-          <span className={styles.bullet}>✦</span>
-          <P5Text text={t.nav.about} />
+          <span className={styles.bullet}>{activeSection === 'about' ? '▸' : ''}</span>
+          {t.nav.about}
         </button>
 
         {activeSection === 'about' && (
@@ -55,7 +54,7 @@ export const Sidebar = ({
                 onClick={() => onAboutTabChange(tab)}
               >
                 <span className={styles.subArrow}>→</span>
-                <P5Text text={t.about.tabs[tab]} />
+                {t.about.tabs[tab]}
               </button>
             ))}
           </div>
@@ -67,8 +66,8 @@ export const Sidebar = ({
             className={`${styles.navItem} ${activeSection === section ? styles.navItemActive : ''}`}
             onClick={() => onSectionChange(section)}
           >
-            <span className={styles.bullet}>✦</span>
-            <P5Text text={t.nav[section]} />
+            <span className={styles.bullet}>{activeSection === section ? '▸' : ''}</span>
+            {t.nav[section]}
           </button>
         ))}
       </nav>
