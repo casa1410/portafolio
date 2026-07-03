@@ -13,6 +13,8 @@ export const BorderFrame = ({ children }: BorderFrameProps) => {
       <div className={`${styles.band} ${styles.bottom}`} />
       <div className={`${styles.band} ${styles.left}`} />
       <div className={`${styles.band} ${styles.right}`} />
+      <div className={`${styles.cornerOrnament} ${styles.cornerBL}`} />
+      <div className={`${styles.cornerOrnament} ${styles.cornerBR}`} />
       <div className={styles.screen}>{children}</div>
     </div>
   );
