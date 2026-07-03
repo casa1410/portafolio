@@ -1,22 +1,14 @@
 .player {
   display: flex;
   align-items: center;
-  gap: 6px;
-  /* Same parallelogram shape as language toggle */
-  padding: 5px 14px;
-  clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
-  background: rgba(255, 255, 255, 0.04);
-  border: 1.5px solid rgba(255, 255, 255, 0.12);
-  transition: border-color var(--transition);
-}
-
-.player:hover {
-  border-color: rgba(230, 0, 18, 0.5);
+  gap: 8px;
+  padding: 6px 14px;
+  border: 2px solid var(--paper);
 }
 
 .icon {
-  font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.75rem;
+  color: var(--paper-faint);
   font-style: normal;
 }
 
@@ -27,17 +19,18 @@
   width: 22px;
   height: 22px;
   font-size: 0.65rem;
-  color: var(--p5-white);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: background var(--transition), border-color var(--transition);
+  color: var(--paper);
+  border: 2px solid var(--paper);
+  transition: background var(--transition), color var(--transition);
 }
 
 .btn:hover:not(.disabled) {
-  background: var(--p5-red);
-  border-color: var(--p5-red);
+  background: var(--paper);
+  color: var(--ink);
 }
 
 .disabled {
-  opacity: 0.25;
+  color: var(--paper-faint);
+  border-color: var(--paper-faint);
   cursor: not-allowed;
 }

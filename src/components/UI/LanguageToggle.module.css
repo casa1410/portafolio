@@ -1,33 +1,35 @@
 .toggle {
   display: flex;
   align-items: center;
-  gap: 5px;
-  /* Parallelogram — signature P5 tag shape */
-  padding: 5px 18px;
-  clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
-  background: rgba(230, 0, 18, 0.08);
-  border: 1.5px solid rgba(230, 0, 18, 0.55);
+  gap: 6px;
+  padding: 6px 14px;
+  border: 2px solid var(--paper);
   font-family: var(--font-display);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 3px;
-  transition: background var(--transition), border-color var(--transition);
+  font-size: 0.6rem;
+  letter-spacing: 2px;
+  transition: background var(--transition), color var(--transition);
 }
 
 .toggle:hover {
-  background: rgba(230, 0, 18, 0.18);
-  border-color: var(--p5-red);
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.toggle:hover .active,
+.toggle:hover .inactive,
+.toggle:hover .divider {
+  color: var(--ink);
 }
 
 .active {
-  color: var(--p5-red);
+  color: var(--paper);
 }
 
 .inactive {
-  color: rgba(255, 255, 255, 0.22);
+  color: var(--paper-faint);
 }
 
 .divider {
-  color: rgba(255, 255, 255, 0.15);
+  color: var(--paper-faint);
   font-size: 0.6rem;
 }
