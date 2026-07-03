@@ -1,20 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700;900&family=Rajdhani:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
 
 :root {
-  --p5-red:        #E60012;
-  --p5-red-dark:   #B5000E;
-  --p5-black:      #0A0A0A;
-  --p5-dark:       #0F0F0F;
-  --p5-gray:       #1A1A1A;
-  --p5-light-gray: #2A2A2A;
-  --p5-white:      #F5F5F5;
-  --p5-yellow:     #FFD700;
+  --ink:         #000000;
+  --paper:       #FFFFFF;
+  --paper-dim:   #B8B8B8;
+  --paper-faint: #6E6E6E;
 
   --sidebar-width: 380px;
+  --frame-size: 20px;
 
-  --transition: 0.22s ease;
-  --font-display: 'Oswald', sans-serif;
-  --font-body:    'Rajdhani', sans-serif;
+  --transition: 0.15s steps(2, end);
+  --font-display: 'Press Start 2P', monospace;
+  --font-body:    'VT323', monospace;
 }
 
 *,
@@ -29,8 +26,8 @@ html, body, #root {
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  background: var(--p5-black);
-  color: var(--p5-white);
+  background: var(--ink);
+  color: var(--paper);
   font-family: var(--font-body);
 }
 
@@ -44,9 +41,9 @@ button {
 
 a { color: inherit; text-decoration: none; }
 
-::-webkit-scrollbar { width: 3px; }
-::-webkit-scrollbar-track { background: var(--p5-black); }
-::-webkit-scrollbar-thumb { background: var(--p5-red); }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--ink); }
+::-webkit-scrollbar-thumb { background: var(--paper); }
 
 @keyframes fadeSlideIn {
   from { opacity: 0; transform: translateX(18px); }
