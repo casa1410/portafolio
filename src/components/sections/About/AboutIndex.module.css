@@ -54,13 +54,6 @@
   );
 }
 
-.birthdayNote {
-  font-family: var(--font-body);
-  font-size: 1rem;
-  color: var(--paper-faint);
-  font-style: italic;
-}
-
 /* ── Top row ─────────────────────────────────────────────── */
 .topRow {
   display: flex;

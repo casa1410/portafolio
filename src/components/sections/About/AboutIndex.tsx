@@ -6,7 +6,7 @@ import styles from './AboutIndex.module.css';
 export const AboutIndex = () => {
   const { t } = useLanguage();
   const info = t.about.index;
-  const { level, daysRemaining, percent } = getLevelProgress();
+  const { level, daysRemaining: xpRemaining, percent } = getLevelProgress();
 
   return (
     <div className={styles.container}>
@@ -43,12 +43,11 @@ export const AboutIndex = () => {
       <div className={styles.levelBlock}>
         <div className={styles.levelHeader}>
           <span className={styles.levelBadge}>{info.level.prefix} {level}</span>
-          <span className={styles.levelMeta}>{daysRemaining} {info.level.daysToNext}</span>
+          <span className={styles.levelMeta}>{xpRemaining} {info.level.xpToNext}</span>
         </div>
         <div className={styles.barTrack}>
           <div className={styles.barFill} style={{ width: `${percent}%` }} />
         </div>
-        <span className={styles.birthdayNote}>{info.level.birthdayNote}</span>
       </div>
 
       {/* Bio */}

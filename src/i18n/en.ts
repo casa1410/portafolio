@@ -21,8 +21,7 @@ export interface TranslationShape {
       bio: string;
       level: {
         prefix: string;
-        daysToNext: string;
-        birthdayNote: string;
+        xpToNext: string;
       };
     };
     experience: {
@@ -92,8 +91,7 @@ const en: TranslationShape = {
       bio: 'Systems engineer passionate about building digital experiences that blend technical precision with creative thinking. Always looking for the next challenge to learn something new and solve problems.',
       level: {
         prefix: 'LEVEL',
-        daysToNext: 'days to next level',
-        birthdayNote: 'Levels up every April 27th — the bar fills one day of XP at a time.',
+        xpToNext: 'xp remaining to next level',
       },
     },
     experience: {
