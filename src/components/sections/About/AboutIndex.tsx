@@ -1,4 +1,5 @@
 import { useLanguage } from '../../../context/LanguageContext';
+import profilePhoto from '../../../assets/profile.jpg';
 import styles from './AboutIndex.module.css';
 
 export const AboutIndex = () => {
@@ -12,7 +13,7 @@ export const AboutIndex = () => {
         {/* Photo with pixel corner markers */}
         <div className={styles.photoWrapper}>
           <div className={styles.photo}>
-            <span className={styles.photoLabel}>PHOTO</span>
+            <img className={styles.photoImg} src={profilePhoto} alt={info.name} />
           </div>
           <div className={styles.photoOffset} />
           {/* Corner bracket markers */}

@@ -9,7 +9,7 @@ interface SidebarProps {
   onAboutTabChange: (tab: AboutTab) => void;
 }
 
-const ABOUT_TABS: AboutTab[] = ['index', 'experience', 'skills', 'projects'];
+const ABOUT_TABS: AboutTab[] = ['index', 'experience', 'skills'];
 const OTHER_SECTIONS: Exclude<MainSection, 'about'>[] = [
   'sideProjects',
   'contact',

@@ -13,7 +13,6 @@ const es: TranslationShape = {
       index: 'Inicio',
       experience: 'Experiencia',
       skills: 'Habilidades',
-      projects: 'Proyectos',
     },
     index: {
       tag: '— Tecnomago —',
@@ -30,10 +29,6 @@ const es: TranslationShape = {
     skills: {
       title: 'Habilidades',
       placeholder: 'Las habilidades técnicas se mostrarán aquí.',
-    },
-    projects: {
-      title: 'Proyectos',
-      placeholder: 'Los proyectos se mostrarán aquí.',
     },
   },
   sideProjects: {

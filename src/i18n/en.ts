@@ -11,7 +11,6 @@ export interface TranslationShape {
       index: string;
       experience: string;
       skills: string;
-      projects: string;
     };
     index: {
       tag: string;
@@ -23,7 +22,6 @@ export interface TranslationShape {
     };
     experience: { title: string; placeholder: string };
     skills:     { title: string; placeholder: string };
-    projects:   { title: string; placeholder: string };
   };
   sideProjects: { title: string; placeholder: string };
   contact:      { title: string; placeholder: string };
@@ -56,7 +54,6 @@ const en: TranslationShape = {
       index: 'Index',
       experience: 'Experience',
       skills: 'Skills',
-      projects: 'Projects',
     },
     index: {
       tag: '— Technomancer —',
@@ -73,10 +70,6 @@ const en: TranslationShape = {
     skills: {
       title: 'Skills',
       placeholder: 'Technical skills will be displayed here.',
-    },
-    projects: {
-      title: 'Projects',
-      placeholder: 'Projects will be displayed here.',
     },
   },
   sideProjects: {
