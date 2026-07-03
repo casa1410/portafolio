@@ -23,8 +23,8 @@
   position: relative;
   width: 155px;
   height: 178px;
-  background: var(--p5-gray);
-  border: 1px solid rgba(230, 0, 18, 0.4);
+  background: var(--ink);
+  border: 2px solid var(--paper);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,9 +33,9 @@
 
 .photoLabel {
   font-family: var(--font-display);
-  font-size: 0.58rem;
-  letter-spacing: 4px;
-  color: var(--p5-light-gray);
+  font-size: 0.55rem;
+  letter-spacing: 3px;
+  color: var(--paper-faint);
   text-transform: uppercase;
 }
 
@@ -46,11 +46,11 @@
   left: 7px;
   width: 155px;
   height: 178px;
-  border: 1px solid var(--p5-light-gray);
+  border: 2px solid var(--paper-faint);
   z-index: 0;
 }
 
-/* P5 targeting corner brackets */
+/* Pixel targeting corner brackets */
 .corner {
   position: absolute;
   width: 14px;
@@ -58,10 +58,10 @@
   z-index: 2;
 }
 
-.tl { top: -3px; left: -3px; border-top: 3px solid var(--p5-red); border-left: 3px solid var(--p5-red); }
-.tr { top: -3px; right: -3px; border-top: 3px solid var(--p5-red); border-right: 3px solid var(--p5-red); }
-.bl { bottom: -3px; left: -3px; border-bottom: 3px solid var(--p5-red); border-left: 3px solid var(--p5-red); }
-.br { bottom: -3px; right: -3px; border-bottom: 3px solid var(--p5-red); border-right: 3px solid var(--p5-red); }
+.tl { top: -3px; left: -3px; border-top: 3px solid var(--paper); border-left: 3px solid var(--paper); }
+.tr { top: -3px; right: -3px; border-top: 3px solid var(--paper); border-right: 3px solid var(--paper); }
+.bl { bottom: -3px; left: -3px; border-bottom: 3px solid var(--paper); border-left: 3px solid var(--paper); }
+.br { bottom: -3px; right: -3px; border-bottom: 3px solid var(--paper); border-right: 3px solid var(--paper); }
 
 /* ── Info block ──────────────────────────────────────────── */
 .infoBlock {
@@ -73,55 +73,49 @@
 
 .tag {
   font-family: var(--font-display);
-  font-size: 0.62rem;
-  letter-spacing: 5px;
-  color: var(--p5-red);
+  font-size: 0.6rem;
+  letter-spacing: 3px;
+  color: var(--paper-dim);
   text-transform: uppercase;
 }
 
 .name {
   font-family: var(--font-display);
-  font-size: 2.6rem;
-  font-weight: 900;
-  color: var(--p5-white);
+  font-size: 1.8rem;
+  color: var(--paper);
   text-transform: uppercase;
   letter-spacing: 1px;
-  line-height: 0.95;
-  text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5);
+  line-height: 1.3;
 }
 
-/* P5-style badge for the role/title */
+/* Inverted tag for the role/title, like a selected menu row */
 .roleBadge {
   display: inline-flex;
   align-items: center;
-  background: var(--p5-red);
-  padding: 4px 14px;
-  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 10px) 100%, 0 100%);
+  background: var(--paper);
+  padding: 6px 14px;
   margin-top: 4px;
-  padding-right: 22px;
 }
 
 .roleText {
   font-family: var(--font-display);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 3px;
-  color: var(--p5-white);
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  color: var(--ink);
   text-transform: uppercase;
 }
 
 .divider {
   width: 50px;
   height: 2px;
-  background: rgba(255, 255, 255, 0.18);
+  background: var(--paper-faint);
   margin: 4px 0;
 }
 
 .university {
   font-family: var(--font-body);
-  font-size: 0.9rem;
-  color: rgba(245, 245, 245, 0.42);
-  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--paper-dim);
   letter-spacing: 0.5px;
 }
 
@@ -130,23 +124,22 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  border-left: 4px solid var(--p5-red);
+  border-left: 4px solid var(--paper);
   padding-left: 20px;
 }
 
 .bioLabel {
   font-family: var(--font-display);
   font-size: 0.6rem;
-  letter-spacing: 4px;
-  color: var(--p5-red);
+  letter-spacing: 3px;
+  color: var(--paper-dim);
   text-transform: uppercase;
 }
 
 .bio {
   font-family: var(--font-body);
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1.8;
-  color: rgba(245, 245, 245, 0.68);
+  font-size: 1.3rem;
+  line-height: 1.5;
+  color: var(--paper-dim);
   max-width: 520px;
 }

@@ -9,7 +9,7 @@ export const AboutIndex = () => {
     <div className={styles.container}>
       <div className={styles.topRow}>
 
-        {/* Photo with P5 targeting corner markers */}
+        {/* Photo with pixel corner markers */}
         <div className={styles.photoWrapper}>
           <div className={styles.photo}>
             <span className={styles.photoLabel}>PHOTO</span>
