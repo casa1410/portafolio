@@ -16,7 +16,7 @@ const es: TranslationShape = {
       projects: 'Proyectos',
     },
     index: {
-      tag: '— Ladrón Fantasma —',
+      tag: '— Tecnomago —',
       name: 'Sebastian Casadiego',
       fullName: 'Sebastian Alfredo Casadiego Mazzillo',
       role: 'Ingeniero de Sistemas',

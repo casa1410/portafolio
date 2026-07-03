@@ -59,7 +59,7 @@ const en: TranslationShape = {
       projects: 'Projects',
     },
     index: {
-      tag: '— Phantom Thief —',
+      tag: '— Technomancer —',
       name: 'Sebastian Casadiego',
       fullName: 'Sebastian Alfredo Casadiego Mazzillo',
       role: 'Systems Engineer',

@@ -29,7 +29,7 @@ export const Sidebar = ({
     <aside className={styles.sidebar}>
       {/* Header */}
       <div className={styles.header}>
-        <span className={styles.headerTag}>Phantom Thief</span>
+        <span className={styles.headerTag}>Tecnomago</span>
         <span className={styles.headerInitials}>S.A.C.</span>
         <div className={styles.headerLine} />
       </div>
