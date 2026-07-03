@@ -1,0 +1,45 @@
+.frame {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: var(--ink);
+}
+
+.band {
+  position: absolute;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' shape-rendering='crispEdges'%3E%3Crect width='16' height='16' fill='%23000'/%3E%3Crect x='1' y='1' width='14' height='6' fill='%23fff'/%3E%3Crect x='1' y='9' width='6' height='6' fill='%23fff'/%3E%3Crect x='9' y='9' width='6' height='6' fill='%23fff'/%3E%3C/svg%3E");
+  background-size: var(--frame-size) var(--frame-size);
+  image-rendering: pixelated;
+  z-index: 1;
+}
+
+/* Top/bottom bands span the full width so the corners are covered too. */
+.top,
+.bottom {
+  left: 0;
+  right: 0;
+  height: var(--frame-size);
+}
+
+.top { top: 0; }
+.bottom { bottom: 0; }
+
+.left,
+.right {
+  top: 0;
+  bottom: 0;
+  width: var(--frame-size);
+}
+
+.left { left: 0; }
+.right { right: 0; }
+
+.screen {
+  position: absolute;
+  inset: var(--frame-size);
+  display: flex;
+  overflow: hidden;
+  background: var(--ink);
+  border: 2px solid var(--paper);
+  z-index: 2;
+}
