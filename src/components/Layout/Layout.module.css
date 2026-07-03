@@ -1,0 +1,74 @@
+.layout {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #080808;
+  /* Larger, more visible zig-zag on the right side */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='30'%3E%3Cpath d='M0 30 L30 0 L60 30' fill='none' stroke='%23ffffff' stroke-width='1.8' opacity='0.1'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+/* ── Diagonal red fill ─────────────────────────────────────────
+   Top: 580px wide (380px sidebar + 200px overhang)
+   Bottom: 380px wide (exact sidebar)
+   More dramatic angle than before.                            */
+.redStrip {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(150deg, rgba(60, 0, 0, 0.6) 0%, transparent 50%),
+    var(--p5-red);
+  clip-path: polygon(0 0, 580px 0, 380px 100%, 0 100%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ── White accent line along the diagonal ───────────────────── */
+.diagonalAccent {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.7);
+  clip-path: polygon(577px 0, 583px 0, 383px 100%, 377px 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ── Main area ───────────────────────────────────────────────── */
+.mainArea {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: transparent;
+  z-index: 2;
+}
+
+/* ── HUD top bar ─────────────────────────────────────────────── */
+.topBar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  padding: 0 20px 0 30px;
+  height: 44px;
+  flex-shrink: 0;
+  background: rgba(6, 6, 6, 0.9);
+  border-bottom: 2px solid var(--p5-red);
+  clip-path: polygon(14px 0, 100% 0, 100% 100%, 0 100%);
+  position: relative;
+}
+
+.topBar::before {
+  content: '★  PORTFOLIO';
+  position: absolute;
+  left: 24px;
+  font-family: var(--font-display);
+  font-size: 0.52rem;
+  font-weight: 700;
+  letter-spacing: 5px;
+  color: rgba(230, 0, 18, 0.3);
+  pointer-events: none;
+}

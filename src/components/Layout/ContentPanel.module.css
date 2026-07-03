@@ -1,0 +1,11 @@
+.panel {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.content {
+  padding: 46px 52px;
+  min-height: 100%;
+  animation: fadeSlideIn 0.28s ease;
+}
