@@ -1,0 +1,76 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  max-width: 520px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--paper);
+  border-left: 4px solid var(--paper);
+  padding-left: 18px;
+}
+
+.description {
+  font-family: var(--font-body);
+  font-size: 1.3rem;
+  line-height: 1.5;
+  color: var(--paper-dim);
+}
+
+.infoList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border: 2px solid var(--paper);
+  padding: 18px 20px;
+}
+
+.infoRow {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.infoLabel {
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  letter-spacing: 2px;
+  color: var(--paper-faint);
+  text-transform: uppercase;
+  min-width: 60px;
+}
+
+.infoValue {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  color: var(--paper);
+}
+
+.links {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.linkBtn {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 24px;
+  border: 2px solid var(--paper);
+  color: var(--paper);
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: background var(--transition), color var(--transition);
+}
+
+.linkBtn:hover {
+  background: var(--paper);
+  color: var(--ink);
+}

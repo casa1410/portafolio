@@ -1,0 +1,91 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 680px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--paper);
+  border-left: 4px solid var(--paper);
+  padding-left: 18px;
+}
+
+.job {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 2px solid var(--paper);
+  padding: 18px 20px;
+}
+
+.jobHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.company {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  color: var(--paper);
+}
+
+.period {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  color: var(--paper-faint);
+}
+
+.roleRow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.roleBadge {
+  display: inline-block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 0.62rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 5px 10px;
+}
+
+.location {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: var(--paper-dim);
+}
+
+.bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 4px;
+  list-style: none;
+}
+
+.bullet {
+  display: flex;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  line-height: 1.4;
+  color: var(--paper-dim);
+}
+
+.bulletMark {
+  color: var(--paper);
+  flex-shrink: 0;
+}

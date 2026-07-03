@@ -1,0 +1,45 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  max-width: 640px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--paper);
+  border-left: 4px solid var(--paper);
+  padding-left: 18px;
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.categoryLabel {
+  font-family: var(--font-display);
+  font-size: 0.62rem;
+  letter-spacing: 3px;
+  color: var(--paper-dim);
+  text-transform: uppercase;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  letter-spacing: 0.5px;
+  color: var(--paper);
+  border: 2px solid var(--paper);
+  padding: 5px 14px;
+}
