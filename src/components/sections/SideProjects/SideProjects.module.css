@@ -68,6 +68,7 @@
 }
 
 .modal {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 18px;
@@ -92,6 +93,7 @@
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--paper);
+  padding-right: 36px;
 }
 
 .imagePlaceholder {
@@ -104,6 +106,36 @@
   font-size: 0.7rem;
   letter-spacing: 3px;
   color: var(--paper-faint);
+}
+
+.projectImage {
+  width: 100%;
+  max-height: 260px;
+  object-fit: contain;
+  border: 2px solid var(--paper);
+  background: var(--ink);
+  image-rendering: auto;
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  list-style: none;
+}
+
+.feature {
+  display: flex;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  line-height: 1.4;
+  color: var(--paper-dim);
+}
+
+.featureMark {
+  color: var(--paper);
+  flex-shrink: 0;
 }
 
 .modalDesc {
@@ -167,14 +199,18 @@
 }
 
 .closeBtn {
-  align-self: flex-start;
-  padding: 8px 18px;
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
   border: 2px solid var(--paper-faint);
   color: var(--paper-dim);
   font-family: var(--font-display);
-  font-size: 0.62rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+  font-size: 0.7rem;
   transition: background var(--transition), color var(--transition), border-color var(--transition);
 }
 

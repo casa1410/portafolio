@@ -89,6 +89,7 @@ const es: TranslationShape = {
   },
   sideProjects: {
     title: 'Proyectos Personales',
+    featuresLabel: 'Caracteristicas',
     techLabel: 'Tecnologias',
     linksLabel: 'Enlaces',
     closeLabel: 'Cerrar',
@@ -96,18 +97,30 @@ const es: TranslationShape = {
     projects: [
       {
         id: 'project-1',
-        name: 'Proyecto 1',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
-        tech: ['Tech 1', 'Tech 2', 'Tech 3'],
+        name: 'Obramax',
+        description: 'Sistema de gestión financiera para empresas de construcción. Permite registrar ingresos, gastos y generar reportes por obra, con acceso multiusuario en tiempo real desde cualquier dispositivo.',
+        features: [
+          'Dashboard con métricas financieras y gráficas en tiempo real',
+          'Gestión de múltiples obras simultáneas con historial',
+          'Registro de ingresos y gastos con filtros por fecha, tipo y proveedor',
+          'Adjuntos de documentos soporte (facturas, comprobantes)',
+          'Exportación a Excel, CSV e impresión de reportes',
+          'Acceso por roles: Administrador, Residente de Obra, Supervisor',
+          'Sincronización en tiempo real con Firebase Firestore',
+          'Autenticación con email y contraseña, recuperación de contraseña por correo',
+          'Funciona en PC y móvil (responsive)',
+          'Modo sin conexión con localStorage como respaldo',
+        ],
+        tech: ['JavaScript', 'Tailwind CSS', 'Firebase', 'Chart.js', 'SheetJS'],
         links: [
-          { label: 'GitHub', url: '#' },
-          { label: 'Demo', url: '#' },
+          { label: 'GitHub', url: 'https://github.com/casa1410/obramax' },
         ],
       },
       {
         id: 'project-2',
         name: 'Proyecto 2',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+        features: ['Lorem ipsum dolor sit amet', 'Consectetur adipiscing elit', 'Sed do eiusmod tempor incididunt'],
         tech: ['Tech 1', 'Tech 2'],
         links: [
           { label: 'GitHub', url: '#' },
@@ -117,6 +130,7 @@ const es: TranslationShape = {
         id: 'project-3',
         name: 'Proyecto 3',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        features: ['Lorem ipsum dolor sit amet', 'Consectetur adipiscing elit', 'Sed do eiusmod tempor incididunt'],
         tech: ['Tech 1', 'Tech 2', 'Tech 3', 'Tech 4'],
         links: [
           { label: 'GitHub', url: '#' },
@@ -127,6 +141,7 @@ const es: TranslationShape = {
         id: 'project-4',
         name: 'Proyecto 4',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.',
+        features: ['Lorem ipsum dolor sit amet', 'Consectetur adipiscing elit', 'Sed do eiusmod tempor incididunt'],
         tech: ['Tech 1', 'Tech 2'],
         links: [
           { label: 'GitHub', url: '#' },

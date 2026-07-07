@@ -2,7 +2,12 @@ import { useEffect, useState } from 'react';
 import { useLanguage } from '../../../context/LanguageContext';
 import chestClosedSprite from './project-assets/chest-closed.svg';
 import chestOpenSprite from './project-assets/chest-open.svg';
+import obramaxScreenshot from './project-assets/obramax.png';
 import styles from './SideProjects.module.css';
+
+const PROJECT_IMAGES: Partial<Record<string, string>> = {
+  'project-1': obramaxScreenshot,
+};
 
 export const SideProjects = () => {
   const { t } = useLanguage();
@@ -40,11 +45,31 @@ export const SideProjects = () => {
       {openProject && (
         <div className={styles.overlay} onClick={() => setOpenId(null)}>
           <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
+            <button className={styles.closeBtn} onClick={() => setOpenId(null)} aria-label={info.closeLabel}>
+              ✕
+            </button>
+
             <h3 className={styles.modalTitle}>{openProject.name}</h3>
 
-            <div className={styles.imagePlaceholder}>{info.imagePlaceholder}</div>
+            {PROJECT_IMAGES[openProject.id] ? (
+              <img className={styles.projectImage} src={PROJECT_IMAGES[openProject.id]} alt={openProject.name} />
+            ) : (
+              <div className={styles.imagePlaceholder}>{info.imagePlaceholder}</div>
+            )}
 
             <p className={styles.modalDesc}>{openProject.description}</p>
+
+            <div className={styles.modalSection}>
+              <span className={styles.sectionLabel}>{info.featuresLabel}</span>
+              <ul className={styles.features}>
+                {openProject.features.map((feature, i) => (
+                  <li className={styles.feature} key={i}>
+                    <span className={styles.featureMark}>▸</span>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
 
             <div className={styles.modalSection}>
               <span className={styles.sectionLabel}>{info.techLabel}</span>
@@ -71,10 +96,6 @@ export const SideProjects = () => {
                 ))}
               </div>
             </div>
-
-            <button className={styles.closeBtn} onClick={() => setOpenId(null)}>
-              {info.closeLabel}
-            </button>
           </div>
         </div>
       )}

@@ -41,6 +41,7 @@ export interface TranslationShape {
   };
   sideProjects: {
     title: string;
+    featuresLabel: string;
     techLabel: string;
     linksLabel: string;
     closeLabel: string;
@@ -49,6 +50,7 @@ export interface TranslationShape {
       id: string;
       name: string;
       description: string;
+      features: string[];
       tech: string[];
       links: { label: string; url: string }[];
     }[];
@@ -208,6 +210,7 @@ const en: TranslationShape = {
   },
   sideProjects: {
     title: 'Side Projects',
+    featuresLabel: 'Features',
     techLabel: 'Technologies',
     linksLabel: 'Links',
     closeLabel: 'Close',
@@ -215,18 +218,30 @@ const en: TranslationShape = {
     projects: [
       {
         id: 'project-1',
-        name: 'Project 1',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
-        tech: ['Tech 1', 'Tech 2', 'Tech 3'],
+        name: 'Obramax',
+        description: 'Financial management system for construction companies. Lets you record income and expenses and generate per-project reports, with real-time multi-user access from any device.',
+        features: [
+          'Real-time financial dashboard with metrics and charts',
+          'Manage multiple construction sites simultaneously with history',
+          'Income/expense tracking with filters by date, type and supplier',
+          'Supporting document attachments (invoices, receipts)',
+          'Export to Excel, CSV and printable reports',
+          'Role-based access: Admin, Site Resident, Supervisor',
+          'Real-time sync with Firebase Firestore',
+          'Email/password authentication with password recovery',
+          'Works on desktop and mobile (responsive)',
+          'Offline mode with localStorage fallback',
+        ],
+        tech: ['JavaScript', 'Tailwind CSS', 'Firebase', 'Chart.js', 'SheetJS'],
         links: [
-          { label: 'GitHub', url: '#' },
-          { label: 'Demo', url: '#' },
+          { label: 'GitHub', url: 'https://github.com/casa1410/obramax' },
         ],
       },
       {
         id: 'project-2',
         name: 'Project 2',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+        features: ['Lorem ipsum dolor sit amet', 'Consectetur adipiscing elit', 'Sed do eiusmod tempor incididunt'],
         tech: ['Tech 1', 'Tech 2'],
         links: [
           { label: 'GitHub', url: '#' },
@@ -236,6 +251,7 @@ const en: TranslationShape = {
         id: 'project-3',
         name: 'Project 3',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        features: ['Lorem ipsum dolor sit amet', 'Consectetur adipiscing elit', 'Sed do eiusmod tempor incididunt'],
         tech: ['Tech 1', 'Tech 2', 'Tech 3', 'Tech 4'],
         links: [
           { label: 'GitHub', url: '#' },
@@ -246,6 +262,7 @@ const en: TranslationShape = {
         id: 'project-4',
         name: 'Project 4',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.',
+        features: ['Lorem ipsum dolor sit amet', 'Consectetur adipiscing elit', 'Sed do eiusmod tempor incididunt'],
         tech: ['Tech 1', 'Tech 2'],
         links: [
           { label: 'GitHub', url: '#' },
