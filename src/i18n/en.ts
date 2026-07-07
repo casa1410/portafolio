@@ -39,7 +39,20 @@ export interface TranslationShape {
       categories: { label: string; items: string[] }[];
     };
   };
-  sideProjects: { title: string; placeholder: string };
+  sideProjects: {
+    title: string;
+    techLabel: string;
+    linksLabel: string;
+    closeLabel: string;
+    imagePlaceholder: string;
+    projects: {
+      id: string;
+      name: string;
+      description: string;
+      tech: string[];
+      links: { label: string; url: string }[];
+    }[];
+  };
   contact: {
     title: string;
     description: string;
@@ -195,7 +208,51 @@ const en: TranslationShape = {
   },
   sideProjects: {
     title: 'Side Projects',
-    placeholder: 'Personal side projects will be displayed here.',
+    techLabel: 'Technologies',
+    linksLabel: 'Links',
+    closeLabel: 'Close',
+    imagePlaceholder: 'IMAGE',
+    projects: [
+      {
+        id: 'project-1',
+        name: 'Project 1',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
+        tech: ['Tech 1', 'Tech 2', 'Tech 3'],
+        links: [
+          { label: 'GitHub', url: '#' },
+          { label: 'Demo', url: '#' },
+        ],
+      },
+      {
+        id: 'project-2',
+        name: 'Project 2',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+        tech: ['Tech 1', 'Tech 2'],
+        links: [
+          { label: 'GitHub', url: '#' },
+        ],
+      },
+      {
+        id: 'project-3',
+        name: 'Project 3',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        tech: ['Tech 1', 'Tech 2', 'Tech 3', 'Tech 4'],
+        links: [
+          { label: 'GitHub', url: '#' },
+          { label: 'Demo', url: '#' },
+        ],
+      },
+      {
+        id: 'project-4',
+        name: 'Project 4',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.',
+        tech: ['Tech 1', 'Tech 2'],
+        links: [
+          { label: 'GitHub', url: '#' },
+          { label: 'Demo', url: '#' },
+        ],
+      },
+    ],
   },
   contact: {
     title: 'Contact',
@@ -217,7 +274,7 @@ const en: TranslationShape = {
     title: 'Support',
     description: 'If you enjoy my work and want to support me, consider buying me a coffee! Every contribution helps me keep building cool things.',
     button: 'Support on Ko-fi',
-    kofiUrl: 'https://ko-fi.com/',
+    kofiUrl: 'https://ko-fi.com/sebastiancasadiego99157',
   },
   audio: {
     playLabel: 'Play background music',

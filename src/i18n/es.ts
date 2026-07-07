@@ -89,7 +89,51 @@ const es: TranslationShape = {
   },
   sideProjects: {
     title: 'Proyectos Personales',
-    placeholder: 'Los proyectos personales se mostrarán aquí.',
+    techLabel: 'Tecnologias',
+    linksLabel: 'Enlaces',
+    closeLabel: 'Cerrar',
+    imagePlaceholder: 'IMAGEN',
+    projects: [
+      {
+        id: 'project-1',
+        name: 'Proyecto 1',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
+        tech: ['Tech 1', 'Tech 2', 'Tech 3'],
+        links: [
+          { label: 'GitHub', url: '#' },
+          { label: 'Demo', url: '#' },
+        ],
+      },
+      {
+        id: 'project-2',
+        name: 'Proyecto 2',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+        tech: ['Tech 1', 'Tech 2'],
+        links: [
+          { label: 'GitHub', url: '#' },
+        ],
+      },
+      {
+        id: 'project-3',
+        name: 'Proyecto 3',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        tech: ['Tech 1', 'Tech 2', 'Tech 3', 'Tech 4'],
+        links: [
+          { label: 'GitHub', url: '#' },
+          { label: 'Demo', url: '#' },
+        ],
+      },
+      {
+        id: 'project-4',
+        name: 'Proyecto 4',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.',
+        tech: ['Tech 1', 'Tech 2'],
+        links: [
+          { label: 'GitHub', url: '#' },
+          { label: 'Demo', url: '#' },
+        ],
+      },
+    ],
   },
   contact: {
     title: 'Contacto',
@@ -111,7 +155,7 @@ const es: TranslationShape = {
     title: 'Apoyar',
     description: '¡Si disfrutas mi trabajo y quieres apoyarme, considera comprarme un café! Cada contribución me ayuda a seguir construyendo cosas geniales.',
     button: 'Apoyar en Ko-fi',
-    kofiUrl: 'https://ko-fi.com/',
+    kofiUrl: 'https://ko-fi.com/sebastiancasadiego99157',
   },
   audio: {
     playLabel: 'Reproducir música de fondo',
