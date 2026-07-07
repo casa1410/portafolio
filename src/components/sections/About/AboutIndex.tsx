@@ -15,7 +15,7 @@ export const AboutIndex = () => {
         {/* Photo with pixel corner markers */}
         <div className={styles.photoWrapper}>
           <div className={styles.photo}>
-            <img className={styles.photoImg} src={profilePhoto} alt={info.name} />
+            <img className={styles.photoImg} src={profilePhoto} alt={info.fullName} />
           </div>
           <div className={styles.photoOffset} />
           {/* Corner bracket markers */}
@@ -28,7 +28,7 @@ export const AboutIndex = () => {
         {/* Info block */}
         <div className={styles.infoBlock}>
           <span className={styles.tag}>{info.tag}</span>
-          <h1 className={styles.name}>{info.name}</h1>
+          <h1 className={styles.name}>{info.fullName}</h1>
 
           <div className={styles.roleBadge}>
             <span className={styles.roleText}>{info.role}</span>

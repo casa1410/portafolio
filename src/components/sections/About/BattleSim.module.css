@@ -1,0 +1,297 @@
+.box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  min-height: 560px;
+  border-width: 9px;
+  border-style: solid;
+  border-color: transparent;
+  border-image-source: url('./battle-assets/window-border.svg');
+  border-image-slice: 24;
+  border-image-repeat: stretch;
+  image-rendering: pixelated;
+  background: var(--ink);
+  padding: 16px;
+  overflow: hidden;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  letter-spacing: 2px;
+  color: var(--paper-faint);
+  text-align: center;
+}
+
+/* ── Enemy ──────────────────────────────────────────────── */
+.enemyArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0 4px;
+}
+
+.enemySprite {
+  width: 88px;
+  height: auto;
+  image-rendering: pixelated;
+  animation: slimeBob 1.6s ease-in-out infinite;
+}
+
+@keyframes slimeBob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* Wrapper that plays a shake animation on remount (key change) when hit */
+.spriteShake {
+  display: inline-block;
+  flex-shrink: 0;
+  animation: hitShake 0.4s ease;
+}
+
+@keyframes hitShake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+}
+
+.enemyBarRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 260px;
+}
+
+.enemyName {
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  letter-spacing: 1px;
+  color: var(--paper-dim);
+  flex-shrink: 0;
+}
+
+/* ── Bars ───────────────────────────────────────────────── */
+.hpTrack,
+.statTrack {
+  flex: 1;
+  height: 10px;
+  border: 1px solid var(--paper);
+  background: var(--ink);
+}
+
+.hpFill {
+  height: 100%;
+  background: #3fbf5f;
+  transition: width 0.4s steps(6, end);
+}
+
+.mpFill {
+  height: 100%;
+  background: #4a90d9;
+  transition: width 0.4s steps(6, end);
+}
+
+/* ── Log line ───────────────────────────────────────────── */
+.logBox {
+  min-height: 44px;
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent;
+  border-image-source: url('./battle-assets/window-border.svg');
+  border-image-slice: 24;
+  border-image-repeat: stretch;
+  image-rendering: pixelated;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  color: var(--paper);
+}
+
+/* ── Command menu ───────────────────────────────────────── */
+.commandBox {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent;
+  border-image-source: url('./battle-assets/window-border.svg');
+  border-image-slice: 24;
+  border-image-repeat: stretch;
+  image-rendering: pixelated;
+  padding: 10px 12px;
+}
+
+.commandTitle {
+  font-family: var(--font-display);
+  font-size: 0.58rem;
+  letter-spacing: 1px;
+  color: var(--paper-dim);
+}
+
+.commandList {
+  display: flex;
+  flex-direction: column;
+}
+
+.commandItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  color: var(--paper);
+  text-align: left;
+  width: 100%;
+}
+
+.commandItemActive {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.commandItemDisabled {
+  color: var(--paper-faint);
+  cursor: not-allowed;
+}
+
+.commandArrow {
+  width: 0.9em;
+  flex-shrink: 0;
+}
+
+.commandCost {
+  margin-left: auto;
+  font-size: 0.58rem;
+  color: var(--paper-dim);
+}
+
+.commandItemActive .commandCost {
+  color: var(--ink);
+}
+
+/* ── Party ──────────────────────────────────────────────── */
+.partyList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.unitRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-width: 7px;
+  border-style: solid;
+  border-color: transparent;
+  border-image-source: url('./battle-assets/window-border-dim.svg');
+  border-image-slice: 24;
+  border-image-repeat: stretch;
+  image-rendering: pixelated;
+  padding: 6px 10px;
+}
+
+.unitRowActive {
+  border-image-source: url('./battle-assets/window-border.svg');
+}
+
+.unitSprite {
+  width: 32px;
+  height: auto;
+  image-rendering: pixelated;
+  flex-shrink: 0;
+}
+
+.unitInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+}
+
+.unitName {
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  letter-spacing: 1px;
+  color: var(--paper);
+}
+
+.statusTag {
+  color: var(--paper-faint);
+}
+
+.statRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.statLabel {
+  font-family: var(--font-display);
+  font-size: 0.52rem;
+  color: var(--paper-faint);
+  width: 20px;
+  flex-shrink: 0;
+}
+
+.statValue {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--paper-dim);
+  width: 56px;
+  flex-shrink: 0;
+  text-align: right;
+}
+
+/* ── Victory overlay ────────────────────────────────────── */
+.victoryOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.victoryText {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  letter-spacing: 3px;
+  color: var(--paper);
+  animation: victoryBlink 0.8s steps(1) infinite;
+}
+
+.victoryHint {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--paper-faint);
+}
+
+@keyframes victoryBlink {
+  0%, 60% { opacity: 1; }
+  80% { opacity: 0.3; }
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .box {
+    min-height: 420px;
+  }
+}

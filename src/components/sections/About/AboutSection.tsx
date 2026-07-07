@@ -2,6 +2,7 @@ import { AboutTab } from '../../../types';
 import { AboutIndex } from './AboutIndex';
 import { Experience } from './Experience';
 import { Skills } from './Skills';
+import { BattleSim } from './BattleSim';
 import styles from './AboutSection.module.css';
 
 interface AboutSectionProps {
@@ -19,8 +20,14 @@ export const AboutSection = ({ activeTab }: AboutSectionProps) => {
 
   return (
     <div className={styles.section}>
-      <div key={activeTab} className={styles.tabContent}>
-        {renderTab()}
+      <div className={styles.pageRow}>
+        <div key={activeTab} className={styles.tabContent}>{renderTab()}</div>
+
+        {/* Prototype: RPG battle simulator widget, shown on every About tab for now.
+            Kept outside the per-tab remount so the same match persists across tabs. */}
+        <div className={styles.sideColumn}>
+          <BattleSim />
+        </div>
       </div>
     </div>
   );

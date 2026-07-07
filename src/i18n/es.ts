@@ -19,7 +19,7 @@ const es: TranslationShape = {
       name: 'Sebastian Casadiego',
       fullName: 'Sebastian Alfredo Casadiego Mazzillo',
       role: 'Ingeniero de Sistemas',
-      university: 'Universidad de la Costa CUC',
+      university: 'Universidad de la Costa',
       bio: 'Ingeniero de sistemas apasionado por construir experiencias digitales que combinan precisión técnica con pensamiento creativo. Siempre en busca del próximo desafío para aprender algo nuevo y resolver problemas.',
       level: {
         prefix: 'NIVEL',
@@ -119,6 +119,54 @@ const es: TranslationShape = {
   },
   placeholder: {
     comingSoon: '// PROXIMAMENTE',
+  },
+  battle: {
+    title: 'COMBATE',
+    turnPrefix: 'TURNO',
+    spellPrompt: 'HECHIZO',
+    targetPrompt: 'OBJETIVO',
+    back: 'ATRAS',
+    commands: { fight: 'FIGHT', magic: 'MAGIC', defend: 'DEFEND' },
+    guardTag: 'GUARDIA',
+    shellTag: 'CORAZA',
+    barrierTag: 'BARRERA',
+    victoryText: '¡VICTORIA!',
+    victoryHint: '(click para luchar de nuevo)',
+    hpLabel: 'HP',
+    mpLabel: 'PM',
+    units: { warrior: 'GUERRERO', blackMage: 'MAGO NEGRO', whiteMage: 'MAGO BLANCO' },
+    monsterName: 'SLIME',
+    elements: { fire: 'FUEGO', water: 'AGUA', grass: 'PLANTA' },
+    spellLabels: { fire: 'BOLA DE FUEGO', water: 'HIDROBOMBA', grass: 'CICLON DE HOJAS' },
+    whiteSpellLabels: { heal: 'SANAR', shell: 'CORAZA', barrier: 'BARRERA MAGICA' },
+    elementVerbs: {
+      fire: 'lanza una bola de fuego a',
+      water: 'lanza un chorro de agua a',
+      grass: 'lanza hojas afiladas a',
+    },
+    superEffective: ' ¡Es super efectivo!',
+    notEffective: ' No es muy efectivo...',
+    messages: {
+      enemyLabel: (monsterName, el) => `${monsterName} DE ${el}`,
+      appear: (el) => `¡Un SLIME DE ${el} salvaje aparece!`,
+      attack: (actor, dmg, mpGain) => `${actor} ataca! -${dmg} HP al SLIME${mpGain > 0 ? ` (+${mpGain} PM)` : ''}`,
+      spellDamage: (actor, spellLabel, dmg, note, cost) =>
+        `${actor} lanza ${spellLabel}! -${dmg} HP al SLIME.${note} (-${cost} PM)`,
+      spellHeals: (actor, spellLabel, heal, cost) =>
+        `${actor} lanza ${spellLabel}, ¡pero es del mismo elemento y cura al SLIME! +${heal} HP (-${cost} PM)`,
+      heal: (actor, target, amount, cost) => `${actor} cura a ${target}! +${amount} HP (-${cost} PM)`,
+      shellCast: (actor, spellLabel, target, cost) =>
+        `${actor} lanza ${spellLabel} sobre ${target}! Defensa fisica aumentada por 3 turnos (-${cost} PM)`,
+      barrierCast: (actor, spellLabel, target, cost) =>
+        `${actor} lanza ${spellLabel} sobre ${target}! Defensa magica aumentada por 3 turnos (-${cost} PM)`,
+      protect: (actor, cost) => `${actor} protege al grupo! (-${cost} PM)`,
+      defend: (actor, mpGain) => `${actor} se pone en guardia!${mpGain > 0 ? ` (+${mpGain} PM)` : ''}`,
+      monsterAttack: (monsterName, target, dmg, reduced) =>
+        `${monsterName} ataca a ${target}! -${dmg} HP${reduced ? ' (daño reducido)' : ''}`,
+      monsterMagic: (monsterName, verb, target, dmg, reduced) =>
+        `${monsterName} ${verb} ${target}! -${dmg} HP${reduced ? ' (daño reducido)' : ''}`,
+      defeated: (monsterName) => `¡El ${monsterName} ha sido derrotado!`,
+    },
   },
 };
 

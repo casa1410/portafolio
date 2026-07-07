@@ -66,6 +66,44 @@ export interface TranslationShape {
   placeholder: {
     comingSoon: string;
   };
+  battle: {
+    title: string;
+    turnPrefix: string;
+    spellPrompt: string;
+    targetPrompt: string;
+    back: string;
+    commands: { fight: string; magic: string; defend: string };
+    guardTag: string;
+    shellTag: string;
+    barrierTag: string;
+    victoryText: string;
+    victoryHint: string;
+    hpLabel: string;
+    mpLabel: string;
+    units: { warrior: string; blackMage: string; whiteMage: string };
+    monsterName: string;
+    elements: { fire: string; water: string; grass: string };
+    spellLabels: { fire: string; water: string; grass: string };
+    whiteSpellLabels: { heal: string; shell: string; barrier: string };
+    elementVerbs: { fire: string; water: string; grass: string };
+    superEffective: string;
+    notEffective: string;
+    messages: {
+      enemyLabel: (monsterName: string, elementLabel: string) => string;
+      appear: (elementLabel: string) => string;
+      attack: (actor: string, dmg: number, mpGain: number) => string;
+      spellDamage: (actor: string, spellLabel: string, dmg: number, note: string, cost: number) => string;
+      spellHeals: (actor: string, spellLabel: string, heal: number, cost: number) => string;
+      heal: (actor: string, target: string, amount: number, cost: number) => string;
+      shellCast: (actor: string, spellLabel: string, target: string, cost: number) => string;
+      barrierCast: (actor: string, spellLabel: string, target: string, cost: number) => string;
+      protect: (actor: string, cost: number) => string;
+      defend: (actor: string, mpGain: number) => string;
+      monsterAttack: (monsterName: string, target: string, dmg: number, reduced: boolean) => string;
+      monsterMagic: (monsterName: string, verb: string, target: string, dmg: number, reduced: boolean) => string;
+      defeated: (monsterName: string) => string;
+    };
+  };
 }
 
 const en: TranslationShape = {
@@ -87,7 +125,7 @@ const en: TranslationShape = {
       name: 'Sebastian Casadiego',
       fullName: 'Sebastian Alfredo Casadiego Mazzillo',
       role: 'Systems Engineer',
-      university: 'Universidad de la Costa CUC',
+      university: 'Universidad de la Costa',
       bio: 'Systems engineer passionate about building digital experiences that blend technical precision with creative thinking. Always looking for the next challenge to learn something new and solve problems.',
       level: {
         prefix: 'LEVEL',
@@ -187,6 +225,54 @@ const en: TranslationShape = {
   },
   placeholder: {
     comingSoon: '// COMING SOON',
+  },
+  battle: {
+    title: 'BATTLE',
+    turnPrefix: 'TURN',
+    spellPrompt: 'SPELL',
+    targetPrompt: 'TARGET',
+    back: 'BACK',
+    commands: { fight: 'FIGHT', magic: 'MAGIC', defend: 'DEFEND' },
+    guardTag: 'GUARD',
+    shellTag: 'SHELL',
+    barrierTag: 'BARRIER',
+    victoryText: 'VICTORY!',
+    victoryHint: '(click to fight again)',
+    hpLabel: 'HP',
+    mpLabel: 'MP',
+    units: { warrior: 'WARRIOR', blackMage: 'BLACK MAGE', whiteMage: 'WHITE MAGE' },
+    monsterName: 'SLIME',
+    elements: { fire: 'FIRE', water: 'WATER', grass: 'GRASS' },
+    spellLabels: { fire: 'FIREBALL', water: 'HYDRO PUMP', grass: 'LEAF CYCLONE' },
+    whiteSpellLabels: { heal: 'HEAL', shell: 'SHELL', barrier: 'BARRIER' },
+    elementVerbs: {
+      fire: 'hurls a fireball at',
+      water: 'blasts a water jet at',
+      grass: 'whips sharp leaves at',
+    },
+    superEffective: " It's super effective!",
+    notEffective: " It's not very effective...",
+    messages: {
+      enemyLabel: (monsterName, el) => `${el} ${monsterName}`,
+      appear: (el) => `A wild ${el} SLIME appears!`,
+      attack: (actor, dmg, mpGain) => `${actor} attacks! -${dmg} HP to the SLIME${mpGain > 0 ? ` (+${mpGain} MP)` : ''}`,
+      spellDamage: (actor, spellLabel, dmg, note, cost) =>
+        `${actor} casts ${spellLabel}! -${dmg} HP to the SLIME.${note} (-${cost} MP)`,
+      spellHeals: (actor, spellLabel, heal, cost) =>
+        `${actor} casts ${spellLabel}, but it shares the SLIME's element and heals it! +${heal} HP (-${cost} MP)`,
+      heal: (actor, target, amount, cost) => `${actor} heals ${target}! +${amount} HP (-${cost} MP)`,
+      shellCast: (actor, spellLabel, target, cost) =>
+        `${actor} casts ${spellLabel} on ${target}! Physical defense up for 3 turns (-${cost} MP)`,
+      barrierCast: (actor, spellLabel, target, cost) =>
+        `${actor} casts ${spellLabel} on ${target}! Magic defense up for 3 turns (-${cost} MP)`,
+      protect: (actor, cost) => `${actor} protects the party! (-${cost} MP)`,
+      defend: (actor, mpGain) => `${actor} braces for impact!${mpGain > 0 ? ` (+${mpGain} MP)` : ''}`,
+      monsterAttack: (monsterName, target, dmg, reduced) =>
+        `${monsterName} attacks ${target}! -${dmg} HP${reduced ? ' (damage reduced)' : ''}`,
+      monsterMagic: (monsterName, verb, target, dmg, reduced) =>
+        `${monsterName} ${verb} ${target}! -${dmg} HP${reduced ? ' (damage reduced)' : ''}`,
+      defeated: (monsterName) => `The ${monsterName} has been defeated!`,
+    },
   },
 };
 

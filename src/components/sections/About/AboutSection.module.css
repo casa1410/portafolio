@@ -1,7 +1,39 @@
 .section {
   width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.pageRow {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  flex: 1;
 }
 
 .tabContent {
+  flex: 0 1 auto;
+  min-width: 0;
   animation: fadeSlideIn 0.25s ease;
+}
+
+.sideColumn {
+  flex: 1;
+  min-width: 460px;
+}
+
+@media (max-width: 860px) {
+  .pageRow {
+    flex-direction: column;
+  }
+
+  .tabContent {
+    max-width: 100%;
+  }
+
+  .sideColumn {
+    width: 100%;
+    min-width: 0;
+  }
 }
