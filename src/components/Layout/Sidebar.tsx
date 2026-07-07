@@ -3,6 +3,7 @@ import { useLanguage } from '../../context/LanguageContext';
 import styles from './Sidebar.module.css';
 
 interface SidebarProps {
+  open: boolean;
   activeSection: MainSection;
   onSectionChange: (section: MainSection) => void;
   activeAboutTab: AboutTab;
@@ -18,6 +19,7 @@ const OTHER_SECTIONS: Exclude<MainSection, 'about'>[] = [
 ];
 
 export const Sidebar = ({
+  open,
   activeSection,
   onSectionChange,
   activeAboutTab,
@@ -26,7 +28,7 @@ export const Sidebar = ({
   const { t } = useLanguage();
 
   return (
-    <aside className={styles.sidebar}>
+    <aside className={`${styles.sidebar} ${open ? styles.sidebarOpen : ''}`}>
       {/* Header */}
       <div className={styles.header}>
         <span className={styles.headerTag}>Tecnomago</span>

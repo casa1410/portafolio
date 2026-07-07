@@ -59,3 +59,12 @@ a { color: inherit; text-decoration: none; }
   from { opacity: 0; }
   to   { opacity: 1; }
 }
+
+/* ── Responsive: shrink the brick frame to reclaim space on small screens ── */
+@media (max-width: 860px) {
+  :root { --frame-size: 18px; }
+}
+
+@media (max-width: 480px) {
+  :root { --frame-size: 10px; }
+}

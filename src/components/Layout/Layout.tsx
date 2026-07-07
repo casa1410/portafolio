@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { MainSection, AboutTab } from '../../types';
 import { Sidebar } from './Sidebar';
 import { ContentPanel } from './ContentPanel';
@@ -19,18 +20,33 @@ export const Layout = ({
   activeAboutTab,
   onAboutTabChange,
 }: LayoutProps) => {
+  const [navOpen, setNavOpen] = useState(false);
+
   return (
     <BorderFrame>
       <div className={styles.layout}>
         <Sidebar
+          open={navOpen}
           activeSection={activeSection}
-          onSectionChange={onSectionChange}
+          onSectionChange={(section) => { onSectionChange(section); setNavOpen(false); }}
           activeAboutTab={activeAboutTab}
-          onAboutTabChange={onAboutTabChange}
+          onAboutTabChange={(tab) => { onAboutTabChange(tab); setNavOpen(false); }}
         />
+
+        {navOpen && <div className={styles.navBackdrop} onClick={() => setNavOpen(false)} />}
 
         <div className={styles.mainArea}>
           <header className={styles.topBar}>
+            <button
+              className={styles.menuButton}
+              aria-label="Menu"
+              aria-expanded={navOpen}
+              onClick={() => setNavOpen((open) => !open)}
+            >
+              <span />
+              <span />
+              <span />
+            </button>
             <LanguageToggle />
             <span className={styles.topBarTitle}>PORTFOLIO</span>
             <AudioPlayer />
