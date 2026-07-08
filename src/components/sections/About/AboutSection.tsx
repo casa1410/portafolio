@@ -2,6 +2,7 @@ import { AboutTab } from '../../../types';
 import { AboutIndex } from './AboutIndex';
 import { Experience } from './Experience';
 import { Skills } from './Skills';
+import { Hobbies } from './Hobbies';
 import { BattleSim } from './BattleSim';
 import styles from './AboutSection.module.css';
 
@@ -15,6 +16,7 @@ export const AboutSection = ({ activeTab }: AboutSectionProps) => {
       case 'index':      return <AboutIndex />;
       case 'experience': return <Experience />;
       case 'skills':     return <Skills />;
+      case 'hobbies':    return <Hobbies />;
     }
   };
 

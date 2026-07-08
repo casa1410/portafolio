@@ -5,7 +5,6 @@ const es: TranslationShape = {
     about: 'Sobre mí',
     sideProjects: 'Proyectos',
     contact: 'Contacto',
-    hobbies: 'Hobbies',
     support: 'Apoyar',
   },
   about: {
@@ -13,6 +12,7 @@ const es: TranslationShape = {
       index: 'Inicio',
       experience: 'Experiencia',
       skills: 'Habilidades',
+      hobbies: 'Hobbies',
     },
     index: {
       tag: '— Tecnomago —',
@@ -160,6 +160,18 @@ const es: TranslationShape = {
       { label: 'GitHub', url: 'https://github.com/casa1410' },
       { label: 'LinkedIn', url: 'https://www.linkedin.com/in/sebastian-alfredo-casadiego-mazzillo-47980324b/' },
     ],
+    form: {
+      nameLabel: 'Nombre',
+      namePlaceholder: 'Tu nombre',
+      emailLabel: 'Correo',
+      emailPlaceholder: 'tu@correo.com',
+      messageLabel: 'Mensaje',
+      messagePlaceholder: '¿Qué quieres contarme?',
+      sendLabel: 'Enviar',
+      sendingLabel: 'Enviando...',
+      successMessage: '¡Mensaje enviado! Te responderé pronto.',
+      errorMessage: 'Algo salió mal. Intenta de nuevo o escríbeme directamente.',
+    },
   },
   hobbies: {
     title: 'Hobbies',

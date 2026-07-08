@@ -3,7 +3,6 @@ export interface TranslationShape {
     about: string;
     sideProjects: string;
     contact: string;
-    hobbies: string;
     support: string;
   };
   about: {
@@ -11,6 +10,7 @@ export interface TranslationShape {
       index: string;
       experience: string;
       skills: string;
+      hobbies: string;
     };
     index: {
       tag: string;
@@ -62,6 +62,18 @@ export interface TranslationShape {
     phone: string;
     location: string;
     links: { label: string; url: string }[];
+    form: {
+      nameLabel: string;
+      namePlaceholder: string;
+      emailLabel: string;
+      emailPlaceholder: string;
+      messageLabel: string;
+      messagePlaceholder: string;
+      sendLabel: string;
+      sendingLabel: string;
+      successMessage: string;
+      errorMessage: string;
+    };
   };
   hobbies: {
     title: string;
@@ -126,7 +138,6 @@ const en: TranslationShape = {
     about: 'About',
     sideProjects: 'Side Proj.',
     contact: 'Contact',
-    hobbies: 'Hobbies',
     support: 'Support',
   },
   about: {
@@ -134,6 +145,7 @@ const en: TranslationShape = {
       index: 'Index',
       experience: 'Experience',
       skills: 'Skills',
+      hobbies: 'Hobbies',
     },
     index: {
       tag: '— Technomancer —',
@@ -281,6 +293,18 @@ const en: TranslationShape = {
       { label: 'GitHub', url: 'https://github.com/casa1410' },
       { label: 'LinkedIn', url: 'https://www.linkedin.com/in/sebastian-alfredo-casadiego-mazzillo-47980324b/' },
     ],
+    form: {
+      nameLabel: 'Name',
+      namePlaceholder: 'Your name',
+      emailLabel: 'Email',
+      emailPlaceholder: 'you@email.com',
+      messageLabel: 'Message',
+      messagePlaceholder: 'What do you want to tell me?',
+      sendLabel: 'Send',
+      sendingLabel: 'Sending...',
+      successMessage: 'Message sent! I\'ll get back to you soon.',
+      errorMessage: 'Something went wrong. Try again or email me directly.',
+    },
   },
   hobbies: {
     title: 'Hobbies',

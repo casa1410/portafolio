@@ -2,7 +2,6 @@ import { MainSection, AboutTab } from '../../types';
 import { AboutSection } from '../sections/About/AboutSection';
 import { SideProjects } from '../sections/SideProjects/SideProjects';
 import { Contact } from '../sections/Contact/Contact';
-import { Hobbies } from '../sections/Hobbies/Hobbies';
 import { Support } from '../sections/Support/Support';
 import styles from './ContentPanel.module.css';
 
@@ -17,7 +16,6 @@ export const ContentPanel = ({ activeSection, activeAboutTab }: ContentPanelProp
       case 'about':       return <AboutSection activeTab={activeAboutTab} />;
       case 'sideProjects': return <SideProjects />;
       case 'contact':     return <Contact />;
-      case 'hobbies':     return <Hobbies />;
       case 'support':     return <Support />;
     }
   };

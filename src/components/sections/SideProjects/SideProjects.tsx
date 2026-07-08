@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { useLanguage } from '../../../context/LanguageContext';
 import chestClosedSprite from './project-assets/chest-closed.svg';
 import chestOpenSprite from './project-assets/chest-open.svg';
@@ -13,8 +13,26 @@ export const SideProjects = () => {
   const { t } = useLanguage();
   const info = t.sideProjects;
   const [openId, setOpenId] = useState<string | null>(null);
+  const [origin, setOrigin] = useState<{ x: number; y: number } | null>(null);
+  const modalRef = useRef<HTMLDivElement>(null);
 
   const openProject = info.projects.find((p) => p.id === openId) ?? null;
+
+  const handleChestClick = (id: string, e: React.MouseEvent<HTMLButtonElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setOrigin({ x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 });
+    setOpenId(id);
+  };
+
+  // Make the modal "pop" out from the chest that was clicked, instead of just fading in centered.
+  useLayoutEffect(() => {
+    if (!openProject || !origin || !modalRef.current) return;
+    const rect = modalRef.current.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    modalRef.current.style.setProperty('--dx', `${origin.x - centerX}px`);
+    modalRef.current.style.setProperty('--dy', `${origin.y - centerY}px`);
+  }, [openProject, origin]);
 
   useEffect(() => {
     if (!openProject) return;
@@ -31,7 +49,7 @@ export const SideProjects = () => {
 
       <div className={styles.grid}>
         {info.projects.map((p) => (
-          <button key={p.id} className={styles.chestButton} onClick={() => setOpenId(p.id)}>
+          <button key={p.id} className={styles.chestButton} onClick={(e) => handleChestClick(p.id, e)}>
             <img
               src={openId === p.id ? chestOpenSprite : chestClosedSprite}
               alt={p.name}
@@ -44,7 +62,7 @@ export const SideProjects = () => {
 
       {openProject && (
         <div className={styles.overlay} onClick={() => setOpenId(null)}>
-          <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
+          <div ref={modalRef} className={styles.modal} onClick={(e) => e.stopPropagation()}>
             <button className={styles.closeBtn} onClick={() => setOpenId(null)} aria-label={info.closeLabel}>
               ✕
             </button>
