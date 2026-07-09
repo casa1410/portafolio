@@ -2,7 +2,7 @@
 
 Portafolio personal con estética de HUD retro estilo videojuego RPG de 8 bits: marco de ladrillos en pixel art, tipografía monoespaciada, paleta blanco/negro/gris, y un simulador de combate interactivo.
 
-🔗 **Demo en vivo:** _(agrega aquí tu URL de Vercel una vez la tengas)_
+🔗 **Demo en vivo:** [portafolio-seven-pink-89.vercel.app](https://portafolio-seven-pink-89.vercel.app/)
 
 ## Stack
 
